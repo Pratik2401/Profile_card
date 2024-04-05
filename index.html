@@ -1,24 +1,36 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>My Profile </title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 </head>
 <body>
     <menu class="my_profile">
-        <section class="my_card">
-        <img src="./my_pic.jpg" alt="No Image found">
-        <section class="lower">
-            <h2 class="name">Pratik Mali</h2>
-            <span class="front_end">Front-end Developer</span>
-            <p class="desp">
-                Navigating the realms of Engineering, AI, and Data Science, I'm a passionate second-year student. Fascinated by the synergies between Web Development, DSA, and IoT, I'm on a quest to unravel the complexities of our digital world. With each line of code, I'm sculpting the future, driven by a relentless curiosity and a thirst for innovation. Join me as we navigate the boundless possibilities of technology together!
- </p>
-            <button class="view">
-                View Projects
-            </button>
+        <section class="my_card" id="myCard">
+            <div class="card_front">
+                <img src="./my_pic.jpg" alt="No Image found">
+                <section class="lower">
+                    <h2 class="name">Pratik Mali</h2>
+                    <span class="front_end">Front-end Developer</span>
+                    <p class="desp">
+                        Navigating the realms of Engineering, AI, and Data Science, I'm a passionate second-year student. Fascinated by the synergies between Web Development, DSA, and IoT, I'm on a quest to unravel the complexities of our digital world. With each line of code, I'm sculpting the future, driven by a relentless curiosity and a thirst for innovation. Join me as we navigate the boundless possibilities of technology together!
+                    </p>
+                    <button class="view" onclick="flipCard()">
+                        Projects
+                    </button>
+                </section>
+            </div>
+            <section class="card_back">
+                <a href="https://pratik2401.github.io/Blog-Website/" target="_blank">Blog Website</a>
+                <a href="https://projectparking.netlify.app/" target="_blank">Parking Website</a>
+                <a href="https://pratik2401.github.io/TO-DO-List/"target="_blank">TO-DO List</a>
+                <a href="https://pratik2401.github.io/quiz-generator/" target="_blank">Quiz Generator</a>
+                <button onclick="flipCardBack()" class="back">Back</button>
+            </section>
         </section>
-    </section>
     </menu>
+    <script src="./script.js"></script>
 </body>
 </html>
