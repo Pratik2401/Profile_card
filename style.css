@@ -8,6 +8,16 @@ body {
     background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
 }
 
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #4158D0;
+    background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+}
+
 .my_profile {
     height: 100vh;
     border: 3px solid black;
@@ -21,8 +31,8 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 75%;
-    width: 50vh;
+    height: 10rem; 
+    width: 24rem;
     border: 5px solid gray;
     border-radius: 30px;
     background: rgba( 255, 255, 255, 0.25 );
@@ -30,14 +40,15 @@ body {
     backdrop-filter: blur( 4px );
     -webkit-backdrop-filter: blur( 4px );
     border: 1px solid rgba( 255, 255, 255, 0.18 );
-    height: 30vh;
     overflow: hidden;
-    transition-property: height;
+    transition-property: height,transform;
     transition-duration: 0.8s;
+    perspective: 1000px;
+    position: relative;
 }
 
 .my_card:hover{
-    height: 75vh;
+    height: 43rem;
 }
 .my_profile img {
     border: 5px solid white;
@@ -84,3 +95,84 @@ body {
     cursor: pointer;
 }
 
+
+
+.card_front,
+.card_back {
+    width: 24rem;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    transition: transform 0.6s;
+}
+
+.card_front {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+.card_back {
+     border-radius: 30px;
+    background: rgba( 255, 255, 255, 0.25 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    transform: rotateY(180deg);
+    z-index: 1;
+}
+
+.my_card.flipped .card_front {
+    transform: rotateY(180deg);
+}
+
+.my_card.flipped .card_back {
+    transform: rotateY(0deg);
+}
+
+.name {
+    margin-bottom: 10px;
+}
+
+.desp {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.view {
+    padding: 10px 20px;
+    background-color: #a600ff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.view:hover {
+    background-color: #8900b3;
+}
+
+a{
+    text-decoration: none;
+    color: white;       
+    font-size: 1.2rem;
+}
+
+
+.back{
+        padding: 10px 20px;
+        background-color: #a600ff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+}
+
+.back:hover{
+    background-color: #8900b3;
+}
